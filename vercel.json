@@ -4,12 +4,6 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.vaniojr.com.br" }],
-      "destination": "https://vaniojr.com.br/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
       "has": [{ "type": "host", "value": "junior.inf.br" }],
       "destination": "https://vaniojr.com.br/:path*",
       "permanent": true
