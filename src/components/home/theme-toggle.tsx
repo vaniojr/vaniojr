@@ -18,7 +18,7 @@ export function ThemeToggle() {
       <Button
         size="icon"
         variant="outline"
-        className="h-9 w-9 border-white/15 bg-white/[0.02] text-zinc-100"
+        className="h-9 w-9 border-zinc-200 bg-white text-zinc-950 shadow-sm hover:bg-zinc-50"
         disabled
         aria-label="Toggle color theme"
       />
@@ -29,7 +29,7 @@ export function ThemeToggle() {
     <Button
       size="icon"
       variant="outline"
-      className="h-9 w-9 border-white/15 bg-white/[0.02] text-zinc-100 hover:bg-white/[0.07]"
+      className="h-9 w-9 border-zinc-200 bg-white text-zinc-950 shadow-sm hover:bg-zinc-50 dark:border-white/10 dark:bg-white/5 dark:text-zinc-100 dark:hover:bg-white/10"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-label="Toggle color theme"
     >

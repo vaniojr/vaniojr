@@ -40,8 +40,8 @@ const item: Variants = {
 function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
     <div className="mb-6 space-y-2">
-      <h2 className="text-2xl font-semibold tracking-tight text-zinc-50 md:text-3xl">{title}</h2>
-      {subtitle ? <p className="max-w-2xl text-zinc-400">{subtitle}</p> : null}
+      <h2 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">{title}</h2>
+      {subtitle ? <p className="max-w-2xl text-muted-foreground">{subtitle}</p> : null}
     </div>
   );
 }
@@ -56,12 +56,12 @@ export function LandingPageContent() {
 
   return (
     <div id="top" className="relative isolate overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_10%_10%,rgba(14,165,233,0.16),transparent_35%),radial-gradient(circle_at_90%_18%,rgba(56,189,248,0.12),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(14,165,233,0.10),transparent_40%)]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(9,9,11,0.45),rgba(9,9,11,0.96))]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_10%_10%,rgba(14,165,233,0.08),transparent_35%),radial-gradient(circle_at_90%_18%,rgba(56,189,248,0.06),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(14,165,233,0.05),transparent_40%)] dark:bg-[radial-gradient(circle_at_10%_10%,rgba(14,165,233,0.16),transparent_35%),radial-gradient(circle_at_90%_18%,rgba(56,189,248,0.12),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(14,165,233,0.10),transparent_40%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.62),rgba(255,255,255,0.96))] dark:bg-[linear-gradient(to_bottom,rgba(9,9,11,0.45),rgba(9,9,11,0.96))]" />
 
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-zinc-950/75 backdrop-blur-xl">
+      <header className="sticky top-0 z-30 border-b border-border/70 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/75">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 md:px-10">
-          <Link href="#top" className="text-sm font-medium uppercase tracking-[0.24em] text-zinc-200">
+          <Link href="#top" className="text-sm font-medium uppercase tracking-[0.24em] text-foreground">
             vaniojr
           </Link>
           <nav className="hidden items-center gap-6 md:flex">
@@ -69,7 +69,7 @@ export function LandingPageContent() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-zinc-300 transition-colors hover:text-white"
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.label}
               </a>
@@ -86,18 +86,18 @@ export function LandingPageContent() {
           animate="show"
           className="relative flex min-h-[68vh] flex-col justify-center"
         >
-          <motion.p variants={item} className="mb-5 text-xs uppercase tracking-[0.24em] text-sky-300/90">
+          <motion.p variants={item} className="mb-5 text-xs uppercase tracking-[0.24em] text-muted-foreground">
             AI • Automation • SaaS • Digital Products
           </motion.p>
           <motion.h1
             variants={item}
-            className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-balance text-white sm:text-5xl md:text-6xl"
+            className="max-w-4xl text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl"
           >
             Building AI-powered systems, automation and digital products.
           </motion.h1>
           <motion.p
             variants={item}
-            className="mt-7 max-w-2xl text-lg leading-relaxed text-zinc-300"
+            className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground"
           >
             Focused on practical execution, rapid experimentation and resilient systems that
             connect technology to real-world outcomes.
@@ -117,7 +117,7 @@ export function LandingPageContent() {
               href="#contact"
               className={cn(
                 buttonVariants({ size: "lg", variant: "outline" }),
-                "rounded-full border-white/20 bg-white/[0.02] px-6 text-zinc-100 hover:bg-white/[0.08]",
+                "rounded-full border-border bg-background px-6 text-foreground hover:bg-muted dark:border-white/20 dark:bg-white/[0.02] dark:text-zinc-100 dark:hover:bg-white/[0.08]",
               )}
             >
               Get in Touch
@@ -127,7 +127,7 @@ export function LandingPageContent() {
 
         <motion.section id="about" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-120px" }}>
           <SectionTitle title="About" />
-          <motion.p variants={item} className="max-w-3xl text-lg leading-relaxed text-zinc-300">
+          <motion.p variants={item} className="max-w-3xl text-lg leading-relaxed text-muted-foreground">
             I build digital systems where AI, automation and product thinking work together.
             My focus is to turn ideas into functional products quickly, iterate with clarity,
             and keep technology useful, pragmatic and adaptable.
@@ -139,10 +139,10 @@ export function LandingPageContent() {
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {interests.map((interest) => (
               <motion.div variants={item} key={interest.title}>
-                <Card className="h-full border-white/10 bg-white/[0.02] shadow-[0_10px_40px_-24px_rgba(14,165,233,0.45)] transition-transform duration-300 hover:-translate-y-1">
+                <Card className="h-full border-border bg-card shadow-[0_10px_40px_-24px_rgba(14,165,233,0.18)] transition-transform duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.02] dark:shadow-[0_10px_40px_-24px_rgba(14,165,233,0.45)]">
                   <CardHeader>
-                    <CardTitle className="text-zinc-100">{interest.title}</CardTitle>
-                    <CardDescription className="text-zinc-400">{interest.description}</CardDescription>
+                    <CardTitle className="text-card-foreground">{interest.title}</CardTitle>
+                    <CardDescription className="text-muted-foreground">{interest.description}</CardDescription>
                   </CardHeader>
                 </Card>
               </motion.div>
@@ -155,17 +155,17 @@ export function LandingPageContent() {
           <div className="grid gap-4 md:grid-cols-2">
             {projectPlaceholders.map((project) => (
               <motion.div variants={item} key={project.category}>
-                <Card className="h-full border-white/10 bg-zinc-900/60 backdrop-blur-sm">
+                <Card className="h-full border-border bg-card backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/60">
                   <CardHeader>
-                    <CardTitle className="text-zinc-100">{project.category}</CardTitle>
-                    <CardDescription className="text-zinc-400">
+                    <CardTitle className="text-card-foreground">{project.category}</CardTitle>
+                    <CardDescription className="text-muted-foreground">
                       Currently exploring and building.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Button
                       variant="ghost"
-                      className="h-auto p-0 text-sm text-sky-300 hover:bg-transparent hover:text-sky-200"
+                      className="h-auto p-0 text-sm text-foreground/80 hover:bg-transparent hover:text-foreground"
                       disabled
                     >
                       Updates soon
@@ -184,7 +184,7 @@ export function LandingPageContent() {
               <Badge
                 key={tech}
                 variant="secondary"
-                className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-sm font-medium text-zinc-200"
+                className="rounded-full border border-border bg-secondary px-4 py-1.5 text-sm font-medium text-secondary-foreground dark:border-white/10 dark:bg-white/[0.03] dark:text-zinc-200"
               >
                 {tech}
               </Badge>
@@ -201,7 +201,7 @@ export function LandingPageContent() {
               rel="noreferrer"
               className={cn(
                 buttonVariants({ variant: "outline" }),
-                "justify-start gap-2 border-white/15 bg-white/[0.02] text-zinc-100 hover:bg-white/[0.08]",
+                "justify-start gap-2 border-border bg-background text-foreground hover:bg-muted dark:border-white/15 dark:bg-white/[0.02] dark:text-zinc-100 dark:hover:bg-white/[0.08]",
               )}
             >
               <Code2 className="size-4" />
@@ -213,7 +213,7 @@ export function LandingPageContent() {
               rel="noreferrer"
               className={cn(
                 buttonVariants({ variant: "outline" }),
-                "justify-start gap-2 border-white/15 bg-white/[0.02] text-zinc-100 hover:bg-white/[0.08]",
+                "justify-start gap-2 border-border bg-background text-foreground hover:bg-muted dark:border-white/15 dark:bg-white/[0.02] dark:text-zinc-100 dark:hover:bg-white/[0.08]",
               )}
             >
               <Network className="size-4" />
@@ -225,7 +225,7 @@ export function LandingPageContent() {
               rel="noreferrer"
               className={cn(
                 buttonVariants({ variant: "outline" }),
-                "justify-start gap-2 border-white/15 bg-white/[0.02] text-zinc-100 hover:bg-white/[0.08]",
+                "justify-start gap-2 border-border bg-background text-foreground hover:bg-muted dark:border-white/15 dark:bg-white/[0.02] dark:text-zinc-100 dark:hover:bg-white/[0.08]",
               )}
             >
               <Camera className="size-4" />
@@ -246,8 +246,8 @@ export function LandingPageContent() {
       </main>
 
       <footer className="mx-auto w-full max-w-6xl px-6 pb-10 md:px-10">
-        <Separator className="mb-6 bg-white/10" />
-        <div className="flex flex-col justify-between gap-3 text-sm text-zinc-500 sm:flex-row">
+        <Separator className="mb-6 bg-border dark:bg-white/10" />
+        <div className="flex flex-col justify-between gap-3 text-sm text-muted-foreground sm:flex-row">
           <p>vaniojr.com.br</p>
           <p>Minimal, modern and built for evolution.</p>
         </div>
