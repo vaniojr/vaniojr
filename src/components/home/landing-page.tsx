@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, Code2, Mail, MoonStar, Network, SunMedium } from "lucide-react";
-import { useTheme } from "next-themes";
+import { ArrowRight, Code2, Mail, Network } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
@@ -16,6 +15,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { interests, navItems, projectPlaceholders, techStack } from "@/lib/content";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./theme-toggle";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -37,23 +37,6 @@ const item: Variants = {
   },
 };
 
-function ThemeToggle() {
-  const { setTheme, theme } = useTheme();
-
-  return (
-    <Button
-      size="icon"
-      variant="outline"
-      className="h-9 w-9 border-white/15 bg-white/[0.02] text-zinc-100 hover:bg-white/[0.07]"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      aria-label="Toggle color theme"
-    >
-      <SunMedium className="size-4 scale-100 rotate-0 transition-transform dark:-rotate-90 dark:scale-0" />
-      <MoonStar className="absolute size-4 scale-0 rotate-90 transition-transform dark:rotate-0 dark:scale-100" />
-    </Button>
-  );
-}
-
 function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
     <div className="mb-6 space-y-2">
@@ -63,7 +46,7 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
   );
 }
 
-export function LandingPage() {
+export function LandingPageContent() {
   const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/SEU-USUARIO";
   const linkedinUrl =
     process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "https://linkedin.com/in/SEU-USUARIO";
