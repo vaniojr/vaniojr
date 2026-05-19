@@ -1,0 +1,36 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.vaniojr.com.br" }],
+      "destination": "https://vaniojr.com.br/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "junior.inf.br" }],
+      "destination": "https://vaniojr.com.br/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.junior.inf.br" }],
+      "destination": "https://vaniojr.com.br/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "junior.tur.br" }],
+      "destination": "https://vaniojr.com.br/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.junior.tur.br" }],
+      "destination": "https://vaniojr.com.br/:path*",
+      "permanent": true
+    }
+  ]
+}

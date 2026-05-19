@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# vaniojr
 
-## Getting Started
+Premium personal website built with Next.js for vaniojr.com.br.
 
-First, run the development server:
+## Architecture Decisions
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- App Router with scalable route structure for future sections.
+- TypeScript-first and componentized UI for maintainability.
+- Tailwind CSS + shadcn/ui primitives for design consistency.
+- Framer Motion for subtle, performance-conscious motion.
+- SEO prepared with metadata, Open Graph image route, sitemap and robots.
+- Vercel-ready setup with host-based redirects for multi-domain strategy.
+
+## Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Framer Motion
+- Lucide Icons
+
+## Project Structure
+
+```text
+src/
+	app/
+		page.tsx
+		founder/page.tsx
+		lab/page.tsx
+		blog/page.tsx
+		opengraph-image.tsx
+		sitemap.ts
+		robots.ts
+	components/
+		home/landing-page.tsx
+		providers/theme-provider.tsx
+		ui/*
+	lib/
+		content.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Local Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open http://localhost:3000.
 
-## Learn More
+## Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Copy the example and edit values:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cp .env.example .env.local
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Prepared for future Supabase and database integrations.
 
-## Deploy on Vercel
+## Vercel Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this repository to GitHub.
+2. Import the repo into Vercel.
+3. Set production domain as vaniojr.com.br.
+4. Add additional domains:
+	 - www.vaniojr.com.br
+	 - junior.inf.br
+	 - junior.tur.br
+5. Configure required environment variables in Vercel Project Settings.
+6. Deploy.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Redirect Strategy
+
+Configured in vercel.json:
+
+- www.vaniojr.com.br -> vaniojr.com.br
+- junior.inf.br -> vaniojr.com.br
+- junior.tur.br -> vaniojr.com.br
+
+## Content Editing
+
+- Main content blocks: src/lib/content.ts
+- Hero and section composition: src/components/home/landing-page.tsx
+- Metadata and SEO: src/app/layout.tsx
+
+## Next Steps
+
+- Replace placeholder contact links.
+- Add projects data source when ready.
+- Implement blog content pipeline (MDX or CMS).
+- Connect Supabase for dynamic content.
