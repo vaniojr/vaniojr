@@ -59,7 +59,7 @@ export function LandingPageContent() {
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_10%_10%,rgba(14,165,233,0.08),transparent_35%),radial-gradient(circle_at_90%_18%,rgba(56,189,248,0.06),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(14,165,233,0.05),transparent_40%)] dark:bg-[radial-gradient(circle_at_10%_10%,rgba(14,165,233,0.16),transparent_35%),radial-gradient(circle_at_90%_18%,rgba(56,189,248,0.12),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(14,165,233,0.10),transparent_40%)]" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.62),rgba(255,255,255,0.96))] dark:bg-[linear-gradient(to_bottom,rgba(9,9,11,0.45),rgba(9,9,11,0.96))]" />
 
-      <header className="sticky top-0 z-30 border-b border-border/70 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/75">
+      <header className="fixed inset-x-0 top-0 z-40 border-b border-border/70 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/75">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 md:px-10">
           <Link href="#top" className="text-sm font-medium uppercase tracking-[0.24em] text-foreground">
             vaniojr
@@ -79,7 +79,7 @@ export function LandingPageContent() {
         </div>
       </header>
 
-      <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 pb-24 pt-16 md:px-10 md:pt-24">
+      <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 pb-24 pt-28 md:px-10 md:pt-32">
         <motion.section
           variants={container}
           initial="hidden"
@@ -125,7 +125,7 @@ export function LandingPageContent() {
           </motion.div>
         </motion.section>
 
-        <motion.section id="about" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-120px" }}>
+        <motion.section id="about" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-120px" }} className="scroll-mt-28">
           <SectionTitle title="About" />
           <motion.p variants={item} className="max-w-3xl text-lg leading-relaxed text-muted-foreground">
             I build digital systems where AI, automation and product thinking work together.
@@ -134,7 +134,7 @@ export function LandingPageContent() {
           </motion.p>
         </motion.section>
 
-        <motion.section id="interests" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-120px" }}>
+        <motion.section id="interests" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-120px" }} className="scroll-mt-28">
           <SectionTitle title="Areas of Interest" subtitle="Core domains where I spend most of my time building and experimenting." />
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {interests.map((interest) => (
@@ -150,7 +150,7 @@ export function LandingPageContent() {
           </div>
         </motion.section>
 
-        <motion.section id="projects" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-120px" }}>
+        <motion.section id="projects" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-120px" }} className="scroll-mt-28">
           <SectionTitle title="Projects & Experiments" subtitle="Structure prepared for upcoming work and public case breakdowns." />
           <div className="grid gap-4 md:grid-cols-2">
             {projectPlaceholders.map((project) => (
@@ -177,7 +177,7 @@ export function LandingPageContent() {
           </div>
         </motion.section>
 
-        <motion.section id="stack" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-120px" }}>
+        <motion.section id="stack" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-120px" }} className="scroll-mt-28">
           <SectionTitle title="Stack" subtitle="Selected technologies used across products, workflows and experiments." />
           <motion.div variants={item} className="flex flex-wrap gap-3">
             {techStack.map((tech) => (
@@ -192,7 +192,7 @@ export function LandingPageContent() {
           </motion.div>
         </motion.section>
 
-        <motion.section id="contact" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-120px" }}>
+        <motion.section id="contact" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-120px" }} className="scroll-mt-28">
           <SectionTitle title="Contact" subtitle="Open to meaningful conversations around AI systems, automation and digital products." />
           <motion.div variants={item} className="grid gap-3 sm:grid-cols-4">
             <a
