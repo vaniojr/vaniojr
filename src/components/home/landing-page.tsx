@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, Code2, Mail, Network } from "lucide-react";
+import { ArrowRight, Code2, Mail, Network, Camera } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
@@ -47,10 +47,12 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
 }
 
 export function LandingPageContent() {
-  const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/SEU-USUARIO";
+  const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/vaniojr";
   const linkedinUrl =
-    process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "https://linkedin.com/in/SEU-USUARIO";
-  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "seu-email@exemplo.com";
+    process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "https://www.linkedin.com/in/vaniojr/";
+  const instagramUrl =
+    process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/vaniojr/";
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "vaniojr@gmail.com";
 
   return (
     <div id="top" className="relative isolate overflow-hidden">
@@ -192,7 +194,7 @@ export function LandingPageContent() {
 
         <motion.section id="contact" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-120px" }}>
           <SectionTitle title="Contact" subtitle="Open to meaningful conversations around AI systems, automation and digital products." />
-          <motion.div variants={item} className="grid gap-3 sm:grid-cols-3">
+          <motion.div variants={item} className="grid gap-3 sm:grid-cols-4">
             <a
               href={githubUrl}
               target="_blank"
@@ -216,6 +218,18 @@ export function LandingPageContent() {
             >
               <Network className="size-4" />
               LinkedIn
+            </a>
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={cn(
+                buttonVariants({ variant: "outline" }),
+                "justify-start gap-2 border-white/15 bg-white/[0.02] text-zinc-100 hover:bg-white/[0.08]",
+              )}
+            >
+              <Camera className="size-4" />
+              Instagram
             </a>
             <a
               href={`mailto:${contactEmail}`}
